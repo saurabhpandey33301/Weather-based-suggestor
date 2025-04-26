@@ -10,10 +10,10 @@ interface WeatherCardProps {
   isNight?: boolean;
 }
 
-const WeatherCard: React.FC<WeatherCardProps> = ({ weatherData, isNight = false }) => {
+const WeatherCard: React.FC<WeatherCardProps> = ({ weatherData }) => {
   const weatherCondition = weatherData.weather[0].main as WeatherCondition;
-  const backgroundClass = isNight ? "" : getWeatherBackground(weatherCondition);
-  const textColorClass = isNight ? "text-white" : getWeatherTextColor(weatherCondition);
+  const backgroundClass =   getWeatherBackground(weatherCondition);
+  const textColorClass =  getWeatherTextColor(weatherCondition);
   
   // Format temperature
   const temperature = Math.round(weatherData.main.temp);
